@@ -6,6 +6,9 @@ export const normalAchievements = [
     name: "You gotta start somewhere",
     description: "Buy a 1st Antimatter Dimension.",
     checkEvent: GAME_EVENT.ACHIEVEMENT_EVENT_OTHER,
+    get reward() { return `gives a big multiplier to some stuff based on achievements completed \uE010`},
+    effect: () => Math.clampMin(Math.pow(Achievements.effectiveCount, 5), 1),
+    formatEffect: value => `${formatX(value, 0, 0)}`
   },
   {
     id: 12,
